@@ -50,12 +50,25 @@
             </div>
             </div>
             <!-- /.col -->
-            <div class="col-6">
+            <div class="col-12">
+            <button type="submit" class="btn btn-primary btn-block my-3">SIGN IN</button>
+            <div class="justify-content-center">
+            <p class="my-3 text-center">----------------------OR----------------------</p>
             </div>
-            <button type="submit" class="btn btn-primary btn-block my-3">Sign In</button>
+            <a href="{{ url('google') }}" class="btn btn-primary btn-block">
+            <div class="row">
+                <div class="col-9 text-right">
+                <span class="text-center">SIGN IN WITH GOOGLE</span>
+                </div>
+                <div class="col-3">
+                <img src="{{asset('template')}}/dist/img/icon/google-icon.png" alt="google" width="50%" class="float-right">
+                </div>
+            </div>
+            </a>
             <!-- /.col -->
+            </div>
         </div>
-        <div class="justify-content-center text-center">
+        <div class="justify-content-center text-center mt-3">
         <p class="mb-1">
         @if (Route::has('password.request'))
             <a href="{{ route('password.request') }}">

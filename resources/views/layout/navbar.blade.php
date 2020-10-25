@@ -122,7 +122,12 @@
             <li class="user-header">
             <img src="{{asset('template')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             <p>
-                {{Auth::user()->name}} - {{Auth::user()->role}}
+                {{Auth::user()->name}} - 
+                @if(Auth::user()->role === "1")
+                    Admin
+                @elseif(Auth::user()->role === "2")
+                    User
+                @endif
                 <small>Member since {{Auth::user()->created_at}}</small>
             </p>
             </li>

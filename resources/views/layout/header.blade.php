@@ -6,6 +6,8 @@
     <title>@yield('title')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{asset('template')}}/dist/img/logo/favicon.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('template')}}/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -15,7 +17,7 @@
     <!-- iCheck -->
     <link rel="stylesheet" href="{{asset('template')}}/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="{{asset('template')}}/plugins/jqvmap/jqvmap.min.css">
+    <!-- <link rel="stylesheet" href="{{asset('template')}}/plugins/jqvmap/jqvmap.min.css"> -->
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('template')}}/dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
@@ -26,6 +28,9 @@
     <link rel="stylesheet" href="{{asset('template')}}/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="{{asset('template')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

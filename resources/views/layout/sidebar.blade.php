@@ -16,7 +16,11 @@
     </div>
     <div class="info">
         <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-        <sup class="text-sm text-light">{{ Auth::user()->role }}</sup>
+        @if(Auth::user()->role === "1")
+        <sup class="text-sm text-light">Admin</sup>
+        @elseif(Auth::user()->role === "2")
+        <sup class="text-sm text-light">User</sup>
+        @endif
     </div>
     </div>
 
@@ -26,7 +30,7 @@
         <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
         <li class="nav-header">
-        <a href="#" class="nav-link active">
+        <a href="{{route('dashboard')}}" class="nav-link {{ Request::is('admin/dashboard')? 'active':'' }}">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
             Dashboard
@@ -35,7 +39,7 @@
         </li>
         <li class="nav-header">TRANSAKSI</li>
         <li class="nav-item">
-        <a href="pages/calendar.html" class="nav-link">
+        <a href="{{route('rent')}}" class="nav-link {{ Request::is('admin/penyewaan')? 'active':'' }}">
             <i class="nav-icon fas fa-upload"></i>
             <p>
             Penyewaan
@@ -44,7 +48,7 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="pages/gallery.html" class="nav-link">
+        <a href="{{route('returns')}}" class="nav-link {{ Request::is('admin/pengembalian')? 'active':'' }}">
             <i class="nav-icon fas fa-download"></i>
             <p>
             Pengembalian
@@ -52,7 +56,7 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link {{ Request::is('admin/laporan')? 'active':'' }}">
             <i class="nav-icon far fa-chart-bar"></i>
             <p>
             Laporan
@@ -61,25 +65,25 @@
         </li>
         <li class="nav-header">DATA MASTER</li>
         <li class="nav-item">
-        <a href="https://adminlte.io/docs/3.0" class="nav-link">
+        <a href="{{route('customer')}}" class="nav-link {{ Request::is('admin/pelanggan')? 'active':'' }}">
             <i class="nav-icon fas fa-user"></i>
             <p>Pelanggan</p>
         </a>
         </li>
         <li class="nav-item">
-        <a href="https://adminlte.io/docs/3.0" class="nav-link">
+        <a href="{{route('employee')}}" class="nav-link {{ Request::is('admin/pegawai')? 'active':'' }}">
             <i class="nav-icon fas fa-users"></i>
             <p>Pegawai</p>
         </a>
         </li>
         <li class="nav-item">
-        <a href="https://adminlte.io/docs/3.0" class="nav-link">
+        <a href="{{route('sepeda')}}" class="nav-link {{ Request::is('admin/sepeda')? 'active':'' }}">
             <i class="nav-icon fas fa-bicycle"></i>
             <p>Sepeda</p>
         </a>
         </li><hr>
         <li class="nav-item has-treeview">
-        <a href="#" class="nav-link">
+        <a href="#" class="nav-link {{ Request::is('admin/pengaturan')? 'active':'' }}">
             <i class="nav-icon fas fa-cog"></i>
             <p>
             PENGATURAN
@@ -94,10 +98,12 @@
             </a>
             </li>
             <li class="nav-item">
-            <a href="pages/tables/data.html" class="nav-link">
+            @if (Route::has('password.request'))
+            <a href="{{ route('password.request') }}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Forget Password</p>
             </a>
+            @endif
             </li>
         </ul>
         </li>
